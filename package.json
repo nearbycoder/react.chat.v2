@@ -1,7 +1,7 @@
 {
-  "name": "react-boiler-with-testing",
-  "version": "1.0.0",
-  "description": "Boilerplate for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack and Karma test runner.",
+  "name": "react-chat-v2",
+  "version": "0.0.1",
+  "description": "FireBase react-chat-v2",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
