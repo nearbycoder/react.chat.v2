@@ -1,6 +1,6 @@
 var React = require('react');
 var TestUtils = require('react/lib/ReactTestUtils'); //I like using the Test Utils, but you can just use the DOM API instead.
-var App = require('../../src/components/App');
+import { App } from '../../src/components/App';
 
 describe('initial app rendered', function () {
 	beforeEach(function() {
@@ -10,10 +10,18 @@ describe('initial app rendered', function () {
   it('renders without problems', function () {
     TestUtils.isDOMComponent(this.app);
   });
-  it('has text Hello World', function () {
-  	expect(React.findDOMNode(this.app).innerHTML).toEqual('Hello, World!');
-  });
-  it('returns test for test func', function () {
-  	expect(this.app.test()).toEqual('test')
-  });
+
+	it('renders header', function () {
+		expect(React.findDOMNode(this.app).innerHTML).toContain('class="header"')
+	});
+
+	it('renders body', function () {
+		expect(React.findDOMNode(this.app).innerHTML).toContain('class="body"')
+	});
+
+	it('renders footer', function () {
+		expect(React.findDOMNode(this.app).innerHTML).toContain('class="footer"')
+	});
+
+
 });

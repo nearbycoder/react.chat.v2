@@ -1,13 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class App extends Component {
-	test() {
-		return 'test';
+export const App = React.createClass({
+	render() {
+		return (
+			<div>
+				<div className="side-nav">
+					<div className="side-nav-title">Rooms</div>
+					<div className="side-nav-search"><input type="text" placeholder="enter channel to filter by"></input></div>
+					<ul className="rooms">
+						<li><a href="#/home"># home</a></li>
+						<li><a href="#/about"># about</a></li>
+					</ul>
+				</div>
+				<div className="body">
+					{this.props.children}
+				</div>
+				<div className="footer">
+				</div>
+			</div>
+		);
 	}
-  render() {
-    return (
-      // Add your component markup and other subcomponent references here.
-      <h1>Hello, World!</h1>
-    );
-  }
-}
+});
